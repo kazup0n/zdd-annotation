@@ -15,7 +15,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-		          <showWarnings>true</showWarnings>
+					<showWarnings>true</showWarnings>
 					<source>1.7</source>
 					<target>1.7</target>
 					<annotationProcessors>
@@ -28,7 +28,6 @@
 						<artifactId>annotations</artifactId>
 						<version>${annotations.version}</version>
 					</dependency>
-
 				</dependencies>
 			</plugin>
 		</plugins>

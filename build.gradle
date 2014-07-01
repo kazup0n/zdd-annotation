@@ -1,0 +1,28 @@
+version = '0.0.1-SNAPSHOT'
+
+subprojects {
+	apply plugin: 'java'
+   	apply plugin: 'eclipse'
+   	
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		testCompile 'org.mockito:mockito-core:1.9.5'
+		testCompile 'junit:junit:4.11'
+	}
+	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+}
+
+project(':example') {
+	dependencies {
+		compile project(':annotations')
+	}
+}
+
+project(':findbugs') {
+	dependencies {
+		compile 'com.google.code.findbugs:findbugs:2.0.3'
+	}
+}

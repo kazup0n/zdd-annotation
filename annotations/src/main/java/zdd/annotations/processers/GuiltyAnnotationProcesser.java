@@ -1,7 +1,5 @@
 package zdd.annotations.processers;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -14,8 +12,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 
-
-import zdd.annotations.Culpability;
+import zdd.annotations.Complaints;
 import zdd.annotations.Guilty;
 
 @SuppressWarnings("restriction")
@@ -29,10 +26,9 @@ public class GuiltyAnnotationProcesser extends AbstractProcessor {
 		for (TypeElement annotation : annotations) {
 			for (Element element : roundEnv.getElementsAnnotatedWith(annotation)) {
 				Guilty guilty = element.getAnnotation(Guilty.class);
-				for(Culpability culp: guilty.value()){
+				for(Complaints culp: guilty.value()){
 					Messager messager = processingEnv.getMessager();
-					//https://jira.codehaus.org/browse/MCOMPILER-66
-					messager.printMessage(Diagnostic.Kind.MANDATORY_WARNING, culp.warningMessage(), element);
+					messager.printMessage(Diagnostic.Kind.WARNING, culp.warningMessage(), element);
 				}
 			}
 		}

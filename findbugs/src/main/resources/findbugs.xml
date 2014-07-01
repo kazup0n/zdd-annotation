@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindbugsPlugin 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" 
+    pluginid="zdd.annnotationg.findbug" 
+    defaultenabled="true">
+  <Detector class="zdd.annotations.findbugs.SpecificAnnotationDetector" speed="fast"/>
+  <BugPattern abbrev="CBGL" type="GUILTY_ANNOTATED_METHOD_INVOKATION" category="CORRECTNESS" />
+</FindbugsPlugin>
+
+

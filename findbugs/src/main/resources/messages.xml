@@ -1,0 +1,21 @@
+<MessageCollection>
+  <Detector class="zdd.annotations.findbugs.SpecificAnnotationDetector">
+    <Details>
+<![CDATA[
+<p> This detector finds logs statements that aren't contained in an if-logging block. 
+It is a fast detector.
+]]>
+    </Details>
+  </Detector>
+  <BugPattern type="GUILTY_ANNOTATED_METHOD_INVOKATION">
+    <ShortDescription>Found unprotected logging</ShortDescription>
+    <LongDescription>Found unprotected logging in {1}</LongDescription>
+    <Details>
+<![CDATA[
+<p> This method logs without first checking that logging is enabled; for example
+... more text omitted...
+]]>
+    </Details>
+  </BugPattern>
+  <BugCode abbrev="CBGL">Found unprotected logging</BugCode>
+</MessageCollection>
