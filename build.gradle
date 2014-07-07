@@ -26,3 +26,7 @@ project(':findbugs') {
 		compile 'com.google.code.findbugs:findbugs:2.0.3'
 	}
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
